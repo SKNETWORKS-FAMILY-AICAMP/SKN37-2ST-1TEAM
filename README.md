@@ -5,7 +5,7 @@
 <!-- prettier-ignore-start -->
 | 권승현 | 김민혁 | 박세윤 | 한세현 |
 | :---: | :---: | :---: | :---: 
-| [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/edu-ai-jiwon) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/nngpfls) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/brainkat) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/gugu-eightyone) |
+| [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/edu-ai-jiwon) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/nngpfls) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/brainkat) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/EllyNight) |
 <!-- prettier-ignore-end -->
 
 ---
@@ -39,8 +39,8 @@
 
 ## 3. 업무 분할 구조
 * **데이터 전처리 및 EDA**: 원천 데이터 8개 영역 결합, 결측치 및 이상치 처리, 마스터셋 구성
-* **모델링 및 하이퍼파라미터 튜닝**: XGBoost, LightGBM, CatBoost, ExtraTrees, Random Forest, MLP 학습 및 Optuna 최적화
-* **대시보드 구현**: Streamlit 기반 UI 구성, 모델 추론 연동, LLM 피드백 연동 기능 구현
+* **모델링 및 하이퍼파라미터 튜닝**: 10% 샘플 데이터 기반 120개 앙상블 조합 탐색 및 전체 데이터 스케일 업(Scale-up) 재튜닝
+* **대시보드 구현**: Streamlit 기반 UI 구성, 최적 앙상블 모델 추론 연동, LLM 피드백 연동 기능 구현
 
 ---
 ## 4. 데이터 수집 및 정의
@@ -118,28 +118,20 @@
 
 ---
 
-## 7. 모델링 및 평가 (XGBoost, LightGBM, CatBoost, ExtraTrees, RandomForest, Decision Tree, MLP)
+# 7. 모델링 및 평가 (전체 데이터 학습 기준)
 
-### 7-1. XGBoost
-- 최적 조건: `max_depth=6`, `learning_rate=0.05`, `n_estimators=200`, `scale_pos_weight=25`, `subsample=0.9`, `colsample_bytree=0.9`, `min_child_weight=20`
-- 평가 결과: Test PR-AUC `0.3934`, ROC-AUC `0.9580`, Recall `0.854`, Precision `0.227`, F1 `0.359`
+*(※ 데이터 스케일 확장에 따른 과적합 방지를 위해, 10% 샘플 데이터로 탐색한 Search Space를 바탕으로 전체 데이터에 맞게 하이퍼파라미터를 재조정함)*
 
-### 7-2. LightGBM
-- 최적 조건: `num_leaves=31`, `learning_rate=0.05`, `n_estimators=300`, `scale_pos_weight=49`, `subsample=0.8`, `colsample_bytree=0.9`, `min_child_samples=50`
-- 평가 결과: Test PR-AUC `0.3921`, ROC-AUC `0.9575`, Recall `0.886`, Precision `0.195`, F1 `0.319`
+### 7-1. 단일 모델 최종 결과 (Top N)
+- **XGBoost**: `[최종 파라미터 내용]` (Test PR-AUC `[수치]`, Recall `[수치]`)
+- **LightGBM**: `[최종 파라미터 내용]` (Test PR-AUC `[수치]`, Recall `[수치]`)
+- **ExtraTrees**: `[최종 파라미터 내용]` (Test PR-AUC `[수치]`, Recall `[수치]`)
+*(여기에 전체 학습에 사용한 모델들만 작성)*
 
-### 7-3. CatBoost
-- 최적 조건: `depth=8`, `learning_rate=0.05`, `iterations=400`, `scale_pos_weight=25`, `subsample=0.7`, `rsm=0.9`, `l2_leaf_reg=10`
-- 평가 결과: Test PR-AUC `0.3909`, ROC-AUC `0.9549`, Recall `0.838`, Precision `0.234`, F1 `0.366`
-
-### 7-4. ExtraTrees & RandomForest
-- **ExtraTrees**: `n_estimators=100`, `max_depth=20`, `min_samples_leaf=50`, `max_features=0.5` (Test PR-AUC `0.3919`)
-- **RandomForest**: `n_estimators=200`, `max_depth=12`, `min_samples_leaf=50`, `class_weight=balanced` (Test PR-AUC `0.3899`, Recall `0.895`)
-
-### 7-5. MLP (딥러닝)
-- 최적 조건: `hidden=(256, 128, 64)`, `dropout=0.2`, `lr=0.001`, `pos_weight=25`, `batch=1024`, `weight_decay=1e-05`
-- 평가 결과: Test PR-AUC `0.3800`, ROC-AUC `0.9514` (가장 낮은 과적합 차이 기록)
-
+### 7-2. 다중 모델 앙상블 시너지 분석
+10% 샘플 데이터로 120개의 결합 조합을 사전 테스트한 후, 최상위 시너지를 낸 모델들을 전체 데이터로 앙상블한 결과입니다.
+- **최고 성능 조합 (평균 앙상블)**: `[결합한 모델명 ex. XGBoost + LightGBM + ExtraTrees]`
+  - 평가 결과: Test PR-AUC `[수치]`, ROC-AUC `[수치]`, Recall `[수치]`, Precision `[수치]`
 ---
 
 ## 8. Streamlit 구현
@@ -154,6 +146,7 @@
 ### 9-1. 주요 인사이트
 1. **데이터 누수(Data Leakage) 통제**: 은행 기준인 '12개월 무실적'을 기반으로 Y 데이터를 생성하는 과정에서 타겟 연관성이 지나치게 높은 변수들을 식별하고 통제하는 작업의 중요성을 확인.
 2. **클래스 불균형 대응**: 이탈률 2.01%의 불균형 데이터셋에서는 단순 Accuracy가 아닌 PR-AUC, Recall, Precision 중심의 평가 체계가 필수적이며, 모델별로 Precision(CatBoost, XGBoost)과 Recall(RandomForest, LightGBM)의 트레이드오프를 확인.
+3. **데이터 스케일업(Scale-up)에 따른 튜닝 전략**: 234만 행의 전체 데이터를 처음부터 앙상블 튜닝하는 대신, 10% 샘플 데이터로 120개의 앙상블 조합을 사전 테스트하여 최적의 조합(XGBoost + ExtraTrees 등)을 먼저 찾아냈습니다. 이후 전체 데이터 학습 시에는 트리의 깊이나 리프 노드 최소 샘플 수를 보수적으로 재조정하여 과적합을 막는 방식으로 튜닝 시간을 획기적으로 단축할 수 있었습니다.
 
 ### 9-2. 팀원 회고
 - **권승현**: 
