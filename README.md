@@ -23,7 +23,7 @@
 
 ### 1-2. 프로젝트 배경
 
-<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/e67caf08-c933-4599-b30a-0ea78eb2de21" /> <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/04283c3d-f020-466f-94e5-e97edb3a58ed" />
+<img width="300" height="300" alt="하나카드" src="https://github.com/user-attachments/assets/a519fd9c-256f-498a-bb41-c0de3c73990b" /> <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/04283c3d-f020-466f-94e5-e97edb3a58ed" />
 https://news.nate.com/view/20260121n30424 | https://www.kbanker.co.kr/news/articleView.html?idxno=224331 | 
 
 최근 고금리와 고물가 장기화로 소비 심리가 위축되고 금융 시장 변동성이 심해지면서 일반 회원의 이탈이 늘고 신규 유입이 정체되는 상황이다. 그래서 카드사는 신규 유치보다 회사의 실질적 매출과 수익성을 이끄는 VIP 고객의 생애 가치(LTV) 극대화와 선제적 이탈 방지(Retention)가 훨씬 중요해졌다. 특히 일시적인 외부 충격이나 이슈로 인한 이탈과 달리, 평상시 VIP 고객의 이탈은 과거 이용 금액 감소, 카드론/리볼빙 등 금융 서비스 이용 패턴 변화, 혜택 체감도 저하 같은 복합적인 사전 징후를 동반한다. 그래서 "VIP 고객은 평소 어떤 이유와 징후로 이탈하는가?"에 대한 본질적인 분석이 필수적이다.
@@ -165,13 +165,17 @@ https://news.nate.com/view/20260121n30424 | https://www.kbanker.co.kr/news/artic
 | **XGBoost (XGB)** | **0.4555** | 0.9632 | 0.8149 | 0.2816 | 0.4186 |
 | **CatBoost (CAT)** | **0.4528** | 0.9631 | 0.8089 | **0.2863** | **0.4229** |
 
-### 7-2. 다중 모델 앙상블 시너지 분석 결과
+### 7-2. 모델별 과적합 확인 결과
+
+
+### 7-3. 다중 모델 앙상블 시너지 분석 결과
 
 | 순위 | 조합명 (평균 앙상블) | 결합 모델 수 | PR-AUC | ROC-AUC | Recall | Precision | F1-Score | 비고 |
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
 | **1** | **LGBM + ET** | **2** | **0.4592** | 0.9641 | 0.8157 | 0.2871 | 0.4247 |  |
 | **2** | **LGBM + CAT + ET** | **3** | **0.4591** | **0.9642** | 0.8140 | **0.2880** | **0.4254** | |
 | **3** | **XGB + LGBM + ET** | **3** | **0.4590** | 0.9641 | **0.8176** | 0.2868 | 0.4246 | 고재현율(Recall) |
+
 
 
 ## 8. Streamlit 구현
