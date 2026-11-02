@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+joblib
+matplotlib
+xgboost
+lightgbm
+catboost
+plotly      # 선택: 설치하면 중요도 그래프의 html 도 함께 저장됩니다
