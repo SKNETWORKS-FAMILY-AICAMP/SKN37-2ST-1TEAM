@@ -13,14 +13,16 @@
 ---
 ## 1. 프로젝트 개요
 
-프로젝트 이름: **💳 카드 고객 이탈 예측 및 대시보드 구축💳**
+프로젝트 이름: **💳 카드 고객 이탈 예측 및 대시보드 구축 💸**
 
 ### 1-1. 개요
 본 프로젝트는 국내 카드사의 VIP 회원 금융 데이터를 기반으로 고객 이탈(Churn) 여부를 예측하는 머신러닝 모델을 구축하고, 이를 활용한 인터랙티브 대시보드를 제공하는 것을 목표로 한다. 
 2018년 9월 활성 고객 데이터를 기준으로 3개월 내 탈회·무실적 여부를 예측하기 위한 마스터셋을 구성하였으며, 7~8월 과거 이용 특성 및 증감 변수까지 확장한 철저한 탐색적 데이터 분석(EDA)과 전처리를 거쳐 총 6개의 분류 모델(XGBoost, LightGBM, CatBoost, ExtraTrees, Random Forest, MLP)을 적용 및 비교·분석하였다. 나아가 예측 성능을 극대화하고 실시간 대시보드 서빙을 최적화하기 위해 다중 모델 결합(Average Ensemble 및 Stacking) 기법을 도입하여 최종 예측력을 검증하였다.
 
 ### 1-2. 프로젝트 배경
-<!-- 내용 공백 처리 -->
+최근 카드업계는 10여 년간 지속된 가맹점 수수료 인하 정책과 간편결제 시장의 팽창으로 인해 전통적인 수익 구조에 큰 타격을 입었다. 이를 극복하기 위해 카드사들은 높은 소비 여력과 우수한 자산 건전성을 갖춘 VIP 고객층을 타겟으로 한 프리미엄 카드 발급에 사활을 걸고 있다. 신규 VIP 고객 유치 비용이 기존 고객 유지 비용보다 월등히 높은 현 상황에서, 이들의 이탈 징후를 조기에 감지하고 선제적으로 방어하는 것은 핵심 비즈니스 과제이다.
+
+하지만 데이터 기반의 고객 관계 관리(CRM)를 위해 도입된 대부분의 AI 모델은 이탈 확률이라는 '결과'만 제시할 뿐, '왜 이탈하는지'에 대한 원인을 설명하지 못하는 블랙박스(Black-box)의 한계를 지니고 있다. 이에 본 프로젝트는 높은 예측 성능을 자랑하는 앙상블 모델을 구축하는 것을 넘어, XAI(설명 가능한 AI)와 생성형 AI(LLM)를 결합하여 실무자가 즉각적으로 고객의 시나리오를 시뮬레이션하고 맞춤형 유지 전략을 추천받을 수 있는 '인터랙티브 이탈 방지 대시보드'를 개발하고자 한다.
 
 ### 1-3. 프로젝트 목표
 - AI Hub 금융 합성 데이터를 활용한 234만여 명 규모의 데이터 통합 및 고객 이탈 예측 모델 설계
@@ -34,6 +36,7 @@
 | 💻 Language | ![Python](https://img.shields.io/badge/PYTHON-3776AB?style=flat-square&logo=python&logoColor=white) |
 | 📊 Data Processing | ![Pandas](https://img.shields.io/badge/PANDAS-150458?style=flat-square&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/NUMPY-013243?style=flat-square&logo=numpy&logoColor=white) |
 | 🤖 Machine Learning | ![Scikit-Learn](https://img.shields.io/badge/SCIKIT--LEARN-F7931E?style=flat-square&logo=scikit-learn&logoColor=white) ![XGBoost](https://img.shields.io/badge/XGBOOST-228B22?style=flat-square&logo=xgboost&logoColor=white) ![LightGBM](https://img.shields.io/badge/LIGHTGBM-9ACD32?style=flat-square) ![CatBoost](https://img.shields.io/badge/CATBOOST-CE412B?style=flat-square&logo=catboost&logoColor=white) ![RandomForest](https://img.shields.io/badge/RANDOM_FOREST-228B22?style=flat-square) ![ExtraTrees](https://img.shields.io/badge/EXTRATREES-2E8B57?style=flat-square) ![DecisionTree](https://img.shields.io/badge/DECISION_TREE-8B4513?style=flat-square) ![MLP](https://img.shields.io/badge/MLP-708090?style=flat-square) ![Optuna](https://img.shields.io/badge/OPTUNA-3C3C3C?style=flat-square) |
+| 🧠 AI & Chatbot | ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=flat-square&logo=Google&logoColor=white) ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=OpenAI&logoColor=white) ![Anthropic](https://img.shields.io/badge/Anthropic-D97757?style=flat-square&logo=Anthropic&logoColor=white) ![Ollama](https://img.shields.io/badge/Ollama-1D1D1D?style=flat-square&logoColor=white) |
 | 🖥️ Web Framework | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=Streamlit&logoColor=white) |
 | 📈 Visualization | ![Matplotlib](https://img.shields.io/badge/MATPLOTLIB-11557C?style=flat-square&logo=python&logoColor=white) ![Seaborn](https://img.shields.io/badge/SEABORN-4C72B0?style=flat-square) |
 
@@ -66,7 +69,7 @@
 ## 5. 데이터 통합 & 전처리 및 EDA
 
 ### 5-1. 데이터 변수 사전 (Data Dictionary)
-분석 및 모델링에 사용된 총 43개의 설명변수 중, 이탈 판별 기여도가 가장 높은 **핵심 변수 12개**의 명세입니다.
+분석 및 모델링에 사용된 총 43개의 설명변수 중, 이탈 판별 기여도가 가장 높은 **핵심 변수 12개**의 명세이다.
 
 | 분류 | 컬럼명 | 설명 | 비고 |
 | :--- | :--- | :--- | :--- |
@@ -83,7 +86,7 @@
 | **고객특성** | `연령` / `VIP등급코드` | 고객의 연령대 및 VIP 등급 | 더미 인코딩 적용 |
 
 ### 5-2. EDA (탐색적 데이터 분석) 단계별 주요 결과
-2018년 9월 활성 고객을 기준으로 7~8월 과거 시점 특성 및 월별 증감 변수를 활용하여 다각도로 분석했습니다.
+2018년 9월 활성 고객을 기준으로 7~8월 과거 시점 특성 및 월별 증감 변수를 활용하여 다각도로 분석함.
 
 * **1단계: 타겟 변수 및 평가지표 정의**
   * 정상 고객이 97.99%를 차지하는 극심한 불균형 데이터임을 확인하여, Accuracy 대신 PR-AUC와 Recall, Precision 중심의 평가지표를 설정함.
@@ -128,7 +131,7 @@
 </p>
 
 ### 5-3. 컬럼별 데이터 전처리 내역
-머신러닝 모델의 예측 성능을 안정적으로 확보하기 위해 변수의 특성에 맞춘 세밀한 전처리를 수행했습니다. (최종 분할: `X_train` 1,876,315행 : `X_test` 469,079행 = 8 : 2)
+머신러닝 모델의 예측 성능을 안정적으로 확보하기 위해 변수의 특성에 맞춘 세밀한 전처리를 수행함. (최종 분할: `X_train` 1,876,315행 : `X_test` 469,079행 = 8 : 2)
 
 | 전처리 기법 | 대상 컬럼 | 처리 방식 및 사유 |
 | :--- | :--- | :--- |
@@ -168,16 +171,15 @@
 ## 8. Streamlit 구현
 
 ### 8-1. 실시간 추론 모델 선정 및 탑재
-- **선정 모델**: `[최종 선택한 앙상블 조합명]`
-- **선정 사유**: 대시보드의 특성상 사용자가 버튼을 클릭했을 때 수 초 이내에 결과를 반환해야 합니다. 따라서 미세한 성능 차이로 무거운 다중 스태킹을 사용하기보다는, PR-AUC 성능을 최고 수준으로 유지하면서도 모델의 가벼움(속도)을 챙길 수 있는 `[선택 조합]` 모델을 최종 백엔드 추론용으로 탑재하였습니다.
+
 
 ---
 ## 9. 인사이트 및 팀원 회고
 
 ### 9-1. 주요 인사이트
-1. **데이터 누수 통제**: 은행 기준인 '12개월 무실적'을 기반으로 Y 데이터를 생성하는 과정에서 타겟 연관성이 지나치게 높은 변수들을 식별하고 통제하는 작업의 중요성을 확인.
-2. **클래스 불균형 대응**: 이탈률 2.01%의 불균형 데이터셋에서는 단순 Accuracy가 아닌 PR-AUC, Recall, Precision 중심의 평가 체계가 필수적이며, 모델별로 Precision과 Recall의 트레이드오프를 확인.
-3. **대용량 학습 대처**: 234만 행의 전체 데이터를 처음부터 앙상블 학습시키는 것은 시간과 리소스가 모자르다고 판단했습니다. 10% 샘플 데이터로 120개의 앙상블 조합을 사전 테스트하여 최적의 조합을 먼저 찾아냈습니다. 이후 전체 데이터 학습 시에는 트리의 깊이나 리프 노드 최소 샘플 수를 점진적으로 재조정하여 과적합을 예방하는 방식으로 튜닝 시간을 단축할 수 있었습니다.
+1. **데이터 누수 통제**: 은행 기준인 '12개월 무실적'을 기반으로 Y 데이터를 생성하는 과정에서 타겟 연관성이 지나치게 높은 변수들을 식별하고 통제하는 작업의 중요성을 확인함.
+2. **클래스 불균형 대응**: 이탈률 2.01%의 불균형 데이터셋에서는 단순 Accuracy가 아닌 PR-AUC, Recall, Precision 중심의 평가 체계가 필수적이며, 모델별로 Precision과 Recall의 트레이드오프를 확인증명함.
+3. **대용량 학습 대처**: 234만 행의 전체 데이터를 처음부터 앙상블 학습시키는 것은 시간과 리소스가 부족하다고 판단함. 이에 10% 샘플 데이터로 120개의 앙상블 조합을 사전 테스트하여 최적의 조합을 도출함. 이후 전체 데이터 학습 시에는 트리의 깊이나 리프 노드 최소 샘플 수를 점진적으로 재조정하여 과적합을 예방하는 방식으로 튜닝 시간을 크게 단축함.
 
 ### 9-2. 팀원 회고
 - **권승현**: 
