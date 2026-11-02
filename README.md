@@ -1,4 +1,4 @@
-# SKN37_2ND_1Team
+# GuardVIP
 ---
 ## 팀원
 
@@ -6,6 +6,8 @@
 | 권승현 | 김민혁 | 박세윤 | 한세현 |
 | :---: | :---: | :---: | :---: 
 | 이미지 | <img width="150" height="150" alt="아르민" src="https://github.com/user-attachments/assets/25b27cd7-a84d-4157-8eba-fd55d6b52174" /> | <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/f7396349-edfa-427f-83ec-585fb05f1bd9" />| <img width="150" height="150" alt="Levi" src="https://github.com/user-attachments/assets/5162013a-5262-4654-8344-f4fac9d3a053" />
+| 팀장 | 팀원 | 팀원 | 팀원
+| 모델 학습 및 고도화 작업, AI 챗봇 구현 | 모델별 과적합 확인, streamlit 화면 구현 | 데이터 전처리 결과, 모델 학습 결과, 학습된 모델 결과분석 보고서 작성 | 데이터 전처리, README 작성
 | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[권승현_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/leopard0315) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[박세윤_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/EllyNight) |
 <!-- prettier-ignore-end -->
 
@@ -13,7 +15,7 @@
 ---
 ## 1. 프로젝트 개요
 
-프로젝트 이름: **💳 카드 고객 이탈 예측 및 대시보드 구축 💸**
+프로젝트 주제: **💳 카드 고객 이탈 예측 및 대시보드 구축 💸**
 
 ### 1-1. 개요
 본 프로젝트는 국내 카드사의 VIP 회원 금융 데이터를 기반으로 고객 이탈(Churn) 여부를 예측하는 머신러닝 모델을 구축하고, 이를 활용한 인터랙티브 대시보드를 제공하는 것을 목표로 한다. 
