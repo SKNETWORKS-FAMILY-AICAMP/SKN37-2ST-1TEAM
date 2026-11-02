@@ -1,4 +1,4 @@
-# SKN37_2ND_1Team - GuardVIP
+# SKN37_2ND_1Team
 
 ## 팀원
 
@@ -10,10 +10,9 @@
 <!-- prettier-ignore-end -->
 
 
----
 ## 1. 프로젝트 개요
 
-프로젝트 이름: **💳 카드 고객 이탈 예측 및 대시보드 구축 💸**
+프로젝트 이름: **GuardVIP - 💳 카드 고객 이탈 예측 및 대시보드 구축 💸**
 
 ### 1-1. 개요
 본 프로젝트는 국내 카드사의 VIP 회원 금융 데이터를 기반으로 고객 이탈(Churn) 여부를 예측하는 머신러닝 모델을 구축하고, 이를 활용한 인터랙티브 대시보드를 제공하는 것을 목표로 한다. 
@@ -32,7 +31,7 @@ https://news.nate.com/view/20260121n30424 | https://www.kbanker.co.kr/news/artic
 - 클래스 불균형(`이탈 통합 비율 2.01%`)을 고려한 정밀한 전처리 및 평가지표(`Recall`, `Precision`, `F1-Score`, `PR-AUC`) 중심 모델 검증
 - Streamlit을 활용한 실시간 이탈 예측 및 시각화 대시보드 구현
 
----
+
 ## 2. 🛠 Tech Stack
 | Category | Stack |
 |----------|-------|
@@ -43,7 +42,7 @@ https://news.nate.com/view/20260121n30424 | https://www.kbanker.co.kr/news/artic
 | 🖥️ Web Framework | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=Streamlit&logoColor=white) |
 | 📈 Visualization | ![Matplotlib](https://img.shields.io/badge/MATPLOTLIB-11557C?style=flat-square&logo=python&logoColor=white) ![Seaborn](https://img.shields.io/badge/SEABORN-4C72B0?style=flat-square) |
 
----
+
 
 ## 3. 업무 분할 구조
 * **데이터 전처리 및 EDA**: 원천 데이터 8개 영역 결합, 7~8월 과거 시점 확장 특성 생성, 결측치/이상치 처리, 마스터셋 구성
