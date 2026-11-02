@@ -20,13 +20,12 @@
 2018년 9월 활성 고객 데이터를 기준으로 3개월 내 탈회·무실적 여부를 예측하기 위한 마스터셋을 구성하였으며, 7~8월 과거 이용 특성 및 증감 변수까지 확장한 철저한 탐색적 데이터 분석(EDA)과 전처리를 거쳐 총 6개의 분류 모델(XGBoost, LightGBM, CatBoost, ExtraTrees, Random Forest, MLP)을 적용 및 비교·분석하였다. 나아가 예측 성능을 극대화하고 실시간 대시보드 서빙을 최적화하기 위해 다중 모델 결합(Average Ensemble 및 Stacking) 기법을 도입하여 최종 예측력을 검증하였다.
 
 ### 1-2. 프로젝트 배경
-<img width="692" height="642" alt="image" src="https://github.com/user-attachments/assets/e67caf08-c933-4599-b30a-0ea78eb2de21" />
-<img width="1542" height="822" alt="image" src="https://github.com/user-attachments/assets/04283c3d-f020-466f-94e5-e97edb3a58ed" />
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/e67caf08-c933-4599-b30a-0ea78eb2de21" /> <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/04283c3d-f020-466f-94e5-e97edb3a58ed" />
+https://news.nate.com/view/20260121n30424 | https://www.kbanker.co.kr/news/articleView.html?idxno=224331 | 
 
 최근 고금리와 고물가 장기화로 소비 심리가 위축되고 금융 시장 변동성이 심해지면서 일반 회원의 이탈이 늘고 신규 유입이 정체되는 상황이다. 그래서 카드사는 신규 유치보다 회사의 실질적 매출과 수익성을 이끄는 VIP 고객의 생애 가치(LTV) 극대화와 선제적 이탈 방지(Retention)가 훨씬 중요해졌다. 특히 일시적인 외부 충격이나 이슈로 인한 이탈과 달리, 평상시 VIP 고객의 이탈은 과거 이용 금액 감소, 카드론/리볼빙 등 금융 서비스 이용 패턴 변화, 혜택 체감도 저하 같은 복합적인 사전 징후를 동반한다. 그래서 "VIP 고객은 평소 어떤 이유와 징후로 이탈하는가?"에 대한 본질적인 분석이 필수적이다.
 이에 따라 본 프로젝트는 하나카드 VIP 활성 고객의 과거 이용 특성과 시계열 증감 변수를 탐색적으로 분석해서 이탈 3개월 전의 미세한 징후를 머신러닝으로 포착하고, 이를 학습해 VIP 고객의 사전 이탈을 감지하고 대비할 수 있는 방어 체계를 구축하고자 한다.
-
-출처: 1) https://news.nate.com/view/20260121n30424 2) https://www.kbanker.co.kr/news/articleView.html?idxno=224331
 
 ### 1-3. 프로젝트 목표
 - AI Hub 금융 합성 데이터를 활용한 234만여 명 규모의 데이터 통합 및 고객 이탈 예측 모델 설계
