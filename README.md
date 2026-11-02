@@ -5,9 +5,7 @@
 <!-- prettier-ignore-start -->
 | 권승현 | 김민혁 | 박세윤 | 한세현 |
 | :---: | :---: | :---: | :---: 
-| 이미지 | <img width="150" height="150" alt="아르민" src="https://github.com/user-attachments/assets/25b27cd7-a84d-4157-8eba-fd55d6b52174" />
-| 이미지 | <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/f7396349-edfa-427f-83ec-585fb05f1bd9" />
-| 이미지 | <img width="150" height="150" alt="Levi" src="https://github.com/user-attachments/assets/5162013a-5262-4654-8344-f4fac9d3a053" />
+| 이미지 | <img width="150" height="150" alt="아르민" src="https://github.com/user-attachments/assets/25b27cd7-a84d-4157-8eba-fd55d6b52174" /> | <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/f7396349-edfa-427f-83ec-585fb05f1bd9" />| <img width="150" height="150" alt="Levi" src="https://github.com/user-attachments/assets/5162013a-5262-4654-8344-f4fac9d3a053" />
 | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[권승현_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/leopard0315) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[박세윤_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/EllyNight) |
 <!-- prettier-ignore-end -->
 
