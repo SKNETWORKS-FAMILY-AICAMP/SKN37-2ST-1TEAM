@@ -1,6 +1,6 @@
 # GuardVIP
 
-## 팀원 소개 및 역할
+## 0. 팀원 소개 및 역할
 
 <!-- prettier-ignore-start -->
 | 권승현 | 김민혁 | 박세윤 | 한세현 |
