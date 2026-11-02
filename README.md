@@ -24,7 +24,7 @@
 ### 1-2. 프로젝트 배경
 
 <img width="300" height="300" alt="하나카드" src="https://github.com/user-attachments/assets/a519fd9c-256f-498a-bb41-c0de3c73990b" /> <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/04283c3d-f020-466f-94e5-e97edb3a58ed" />
-https://news.nate.com/view/20260121n30424 | https://www.kbanker.co.kr/news/articleView.html?idxno=224331 | 
+https://news.dealsitetv.com/articles/163781 | https://www.kbanker.co.kr/news/articleView.html?idxno=224331 | 
 
 최근 고금리와 고물가 장기화로 소비 심리가 위축되고 금융 시장 변동성이 심해지면서 일반 회원의 이탈이 늘고 신규 유입이 정체되는 상황이다. 그래서 카드사는 신규 유치보다 회사의 실질적 매출과 수익성을 이끄는 VIP 고객의 생애 가치(LTV) 극대화와 선제적 이탈 방지(Retention)가 훨씬 중요해졌다. 특히 일시적인 외부 충격이나 이슈로 인한 이탈과 달리, 평상시 VIP 고객의 이탈은 과거 이용 금액 감소, 카드론/리볼빙 등 금융 서비스 이용 패턴 변화, 혜택 체감도 저하 같은 복합적인 사전 징후를 동반한다. 그래서 "VIP 고객은 평소 어떤 이유와 징후로 이탈하는가?"에 대한 본질적인 분석이 필수적이다.
 이에 따라 본 프로젝트는 하나카드 VIP 활성 고객의 과거 이용 특성과 시계열 증감 변수를 탐색적으로 분석해서 이탈 3개월 전의 미세한 징후를 머신러닝으로 포착하고, 이를 학습해 VIP 고객의 사전 이탈을 감지하고 대비할 수 있는 방어 체계를 구축하고자 한다.
