@@ -5,7 +5,7 @@
 <!-- prettier-ignore-start -->
 | 권승현 | 김민혁 | 박세윤 | 한세현 |
 | :---: | :---: | :---: | :---: 
-| [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[권승현_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[김민혁_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[박세윤_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[한세현_깃허브_ID]) |
+| [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[권승현_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/leopard0315) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[박세윤_깃허브_ID]) | [![github](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/[한세현_깃허브_ID]) |
 <!-- prettier-ignore-end -->
 
 ---
