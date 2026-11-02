@@ -1,5 +1,5 @@
-# SKN37_2ND_1Team
----
+# SKN37_2ND_1Team - GuardVIP
+
 ## 팀원
 
 <!-- prettier-ignore-start -->
