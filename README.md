@@ -167,6 +167,37 @@ https://news.dealsitetv.com/articles/163781 | https://www.kbanker.co.kr/news/art
 
 ### 7-2. 모델별 과적합 확인 결과
 
+각 모델별로 학습용 데이터의 특성 중요도와 평가용 데이터의 특성 중요도를 비교하여 과적합을 판단하였습니다.
+* ExtraTrees - 학습용 특성 중요도
+<img width="1430" height="715" alt="01_학습용_특성중요도_Top5_ExtraTrees" src="https://github.com/user-attachments/assets/92ac5070-79ad-4ae7-b62e-9c5c4c4b69c3" />
+
+* ExtraTrees - 평가용 특성 중요도
+<img width="1430" height="715" alt="02_평가용_특성중요도_Top5_ExtraTrees" src="https://github.com/user-attachments/assets/cf3fa3b8-4241-4ca5-90d8-388488092a8c" />
+
+
+* LightGBM - 학습용 특성 중요도
+<img width="1430" height="715" alt="01_학습용_특성중요도_Top5_LightGBM" src="https://github.com/user-attachments/assets/2a326785-b874-45aa-8def-47e8e4b0b88a" />
+
+* LightGBM - 평가용 특성 중요도
+<img width="1430" height="715" alt="02_평가용_특성중요도_Top5_LightGBM" src="https://github.com/user-attachments/assets/b6a102d4-c1e5-4635-a65d-6df08bbf620b" />
+
+
+* XGBoost - 학습용 특성 중요도
+<img width="1430" height="715" alt="01_학습용_특성중요도_Top5_XGBoost" src="https://github.com/user-attachments/assets/80284a62-d9b8-4dbe-a27c-c99cc94a4348" />
+
+  
+* XGBoost - 평가용 특성 중요도
+<img width="1430" height="715" alt="02_평가용_특성중요도_Top5_XGBoost" src="https://github.com/user-attachments/assets/7b653ba3-fa04-4caf-8704-386efcf42ba9" />
+
+
+* CatBoost - 학습용 특성 중요도
+<img width="1430" height="715" alt="01_학습용_특성중요도_Top5_CatBoost" src="https://github.com/user-attachments/assets/6707cebf-2bb3-46e3-bc51-d08ffd5c7dec" />
+
+  
+* CatBoost - 평가용 특성 중요도
+<img width="1430" height="715" alt="02_평가용_특성중요도_Top5_CatBoost" src="https://github.com/user-attachments/assets/de3a101f-c07d-4229-b29c-389d1e76e255" />
+
+  
 
 ### 7-3. 다중 모델 앙상블 시너지 분석 결과
 
